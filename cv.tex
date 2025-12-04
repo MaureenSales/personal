@@ -1,0 +1,201 @@
+%-------------------------
+% CV - Melissa Maureen Sales Brito
+% Modern Tech CV Template - Two Column Version
+% Author: Melissa Sales
+% Colors: Soft Cyan/Gray Tech Theme
+% License: MIT
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{tabularx}
+
+% More compact margin settings
+\geometry{
+    a4paper,
+    left=6mm,
+    right=6mm,
+    top=10mm,
+    bottom=10mm
+}
+
+% Tech theme colors - Softer version
+\definecolor{primary}{RGB}{79, 195, 217}     % Soft primary cyan
+\definecolor{secondary}{RGB}{55, 71, 79}     % Dark gray
+\definecolor{lightgray}{RGB}{245, 247, 250}  % Very light gray
+\definecolor{accent}{RGB}{59, 168, 184}      % Darker soft cyan
+\definecolor{text}{RGB}{38, 50, 56}          % Main text
+\definecolor{tagbg}{RGB}{230, 245, 248}      % Soft tag background
+
+% Hyperlink configuration
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    urlcolor=accent,
+    citecolor=accent
+}
+
+% Compact list configuration
+\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt, leftmargin=*}
+
+% Custom commands
+\newcommand{\cvsection}[1]{%
+    \vspace{0.4em}
+    \noindent\colorbox{lightgray}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+        \textbf{\color{secondary}#1}%
+    }}%
+    \vspace{0.2em}
+}
+
+\newcommand{\cvtag}[1]{%
+    \tikz[baseline]\node[anchor=base, fill=tagbg, text=accent,
+          rectangle, rounded corners=3pt, inner sep=2pt,
+          font=\scriptsize\bfseries] {#1};
+}
+
+\newcommand{\techitem}[1]{%
+    \item \small #1
+}
+
+\newcommand{\project}[4]{%
+    \vspace{2pt}
+    \noindent\textbf{\small #1} \hfill \textit{\scriptsize #2}\par\smallskip
+    \footnotesize #3\par
+    \scriptsize \faGithub\ \href{#4}{Repository}\par
+    \vspace{3pt}
+}
+
+\begin{document}
+
+% Compact header
+\begin{center}
+    {\color{primary}\LARGE\bfseries Melissa Maureen Sales Brito}\\[1mm]
+    {\color{accent}\large Software Developer}
+
+    \vspace{2mm}
+    \noindent\rule{0.95\textwidth}{0.5pt}
+
+    \vspace{2mm}
+    \begin{tabular}{ccc}
+        \faPhone\ \scriptsize +53 58959309 &
+        \faEnvelope\ \scriptsize \href{mailto:smelissamaureen@gmail.com}{smelissamaureen@gmail.com} &
+        \faGithub\ \scriptsize \href{https://github.com/MaureenSales}{MaureenSales} \\
+        \faMapMarker\ \scriptsize Havana, Cuba
+    \end{tabular}
+\end{center}
+
+\vspace{4mm}
+
+\begin{multicols}{2}
+
+% LEFT COLUMN
+\raggedright
+
+% Education
+\cvsection{EDUCATION}
+
+\footnotesize
+\textbf{Highlighted Courses:}\\[1mm]
+\cvtag{Data Structures}
+\cvtag{Algorithms}\\
+\cvtag{Software Engineering}
+\cvtag{Architecture}\\
+\cvtag{OOP}
+\cvtag{Databases}
+
+\vspace{4mm}
+
+% Technical Skills
+\cvsection{TECHNICAL SKILLS}
+
+\begin{itemize}
+    \techitem{\textbf{Languages:}}\\[1mm]
+    \cvtag{C\#} \cvtag{Python} \cvtag{JavaScript}\\
+    \cvtag{SQL}  \cvtag{TypeScript}
+
+    \vspace{2mm}
+    \techitem{\textbf{Frameworks:}}\\[1mm]
+    \cvtag{.NET} \cvtag{ASP.NET}\\
+    \cvtag{Entity Framework} \cvtag{Blazor}
+
+    \vspace{2mm}
+    \techitem{\textbf{Databases:}}\\[1mm]
+    \cvtag{PostgreSQL} \cvtag{SQLite}
+
+    \vspace{2mm}
+    \techitem{\textbf{Tools:}}\\[1mm]
+    \cvtag{Git} \cvtag{GitHub} \cvtag{Docker} \cvtag{HTML/CSS}\\
+    \cvtag{Visual Studio} \cvtag{VS Code} \\
+    \cvtag{Latex} \cvtag{Linux} \cvtag{pgAdmin}
+\end{itemize}
+
+\vspace{4mm}
+
+% Achievements
+\cvsection{ACHIEVEMENTS}
+
+\begin{itemize}
+    \item \small\textbf{Participation in mathematics competitions}\\
+    \footnotesize National preselection.
+\end{itemize}
+
+\columnbreak
+
+% RIGHT COLUMN
+\raggedright
+
+% Projects
+\cvsection{PROJECTS}
+
+\project{Polyclinic System }{C\#, .NET 8, PostgreSQL, React, EF}{
+Medical management system under development, with modular architecture. REST API with JWT, React frontend, PostgreSQL. Clean Architecture.
+}{https://github.com/polyclinic-project-2025/polyclinic_backend}
+
+\project{Moogle!}{C\#, .NET 6, Blazor, TF-IDF}{
+Intelligent search engine with vector model and TF-IDF. Cosine similarity, advanced operators, Blazor interface.
+}{https://github.com/MaureenSales/moogle}
+
+\project{S-MIPS Microprocessor}{Logisim, Python, Assembly}{
+Complete CPU with S-MIPS instructions. Design in Logisim, Python assembler, cost optimization.
+}{https://github.com/MaureenSales/Proyecto-SMIPS-2024-2025}
+
+\project{Hulk-rdp}{C\#, Interpreter, Data Structures}{
+HULK language interpreter with recursive descent parser. AST, type system, pattern matching.
+}{https://github.com/MaureenSales/Hulk-rdp}
+
+\project{Hwent}{C\#, Unity, OOP, Design Patterns}{
+Implementation of the Gwent game. Card system, advanced mechanics, Strategy and Observer patterns.
+}{https://github.com/MaureenSales/Hwent-}
+
+\project{LinkChat}{Python, Sockets, Networking}{
+Real-time P2P chat with Python sockets. Client-server architecture, concurrent handling.
+}{https://github.com/MaureenSales/LinkChat}
+
+\project{Captive Portal}{Python, Sockets, Networking, TCP, HTTP}{
+A network machine that monitors HTTP traffic and forces users to go through a special page before browsing the Internet.
+}{https://github.com/Bazan49/Portal-Cautivo}
+
+\end{multicols}
+
+% Compact footer
+\vspace{2mm}
+\begin{center}
+\noindent\color{primary!60}\rule{0.95\textwidth}{0.5pt}\par
+\color{secondary}
+\scriptsize
+CV available at: \href{https://github.com/MaureenSales}{GitHub/MaureenSales}
+\end{center}
+
+\end{document}
